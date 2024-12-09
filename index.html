@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immitra Bio - Coming Soon</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #09203f, #537895);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        footer a {
+            color: #61dafb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Immitra Bio</h1>
+        <p>Turning blood stem cells into living protein factories.</p>
+        <p class="countdown">Launching Soon!</p>
+        <footer>
+            &copy; <span id="year"></span> Immitra Bio. All Rights Reserved. 
+            <br>
+            <a href="mailto:info@immitrabio.com">info@immitrabio.com</a>
+        </footer>
+    </div>
+    <script>
+        // Update year dynamically
+        const yearElement = document.getElementById('year');
+        yearElement.textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
