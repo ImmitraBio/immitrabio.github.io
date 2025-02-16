@@ -1,3 +1,5 @@
+
+// COUNTERS
 // Get allValues using querySelectorAll
 let allValues = document.querySelectorAll(".value");
 
@@ -18,6 +20,8 @@ allValues.forEach((singleValue) => {
   }, duration);
 });
 
+
+// BURGER MENU
 document.addEventListener("DOMContentLoaded", function () {
   const burger = document.querySelector(".burger-menu");
   const mobileMenu = document.querySelector(".mobile-menu");
@@ -34,9 +38,5 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
-
-
-
-
 
 
