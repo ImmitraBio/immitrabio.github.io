@@ -417,15 +417,116 @@
   ///////////////////////////////////// */
   
   
-  
-  
-  /* Footer */
-  .footer {
-    background: #000;
+  /* =============================================
+   FOOTER STYLING
+   ============================================= */
+
+/* =============================================
+   FOOTER STYLING
+   ============================================= */
+   .footer {
+    background: #000000;
     color: white;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    width: 90%;
+    gap: 40px;
+}
+
+/* Left Section: Contact & Address */
+.footer-left {
+    flex: 1;
+}
+
+.footer-left h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #F8F9FA;
+}
+
+.footer-left p {
+    font-size: 1rem;
+    color: #DDD;
+    margin-bottom: 5px;
+}
+
+.footer-left a {
+    color: #FFD700; /* Gold highlight for email */
+    text-decoration: none;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+}
+
+/* Right Section: HQ Image */
+.footer-right {
+    flex: 1;
     text-align: center;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
+}
+
+.footer-right img {
     width: 100%;
-  }
+    max-width: 300px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* =============================================
+   FOOTER BOTTOM COPYRIGHT & SOCIAL ICONS
+   ============================================= */
+.footer-bottom {
+    background-color: black;
+    color: gray;
+    text-align: center;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Social Icons */
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer-right {
+        width: 100%;
+    }
+
+    .footer-right img {
+        max-width: 250px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
