@@ -230,6 +230,34 @@ RESPONSIVE DESIGN
   
   
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 /* *************************************
 PARALLAX SECTION FIXES & IMPROVEMENTS
@@ -237,8 +265,9 @@ PARALLAX SECTION FIXES & IMPROVEMENTS
 
 /* Ensures proper spacing from the navbar */
 .first-section {
-  padding-top: 120px; /* Must be >= navbar height */
+  padding-top: 80px; /* Must be >= navbar height */
 }
+
 
 /* Parallax Background Settings */
 .parallax {
@@ -266,6 +295,17 @@ PARALLAX SECTION FIXES & IMPROVEMENTS
   max-height: 80vh;
 }
 
+
+/* Hero Image Adjustments */
+.vien_parallax img {
+  max-width: 80%;
+  max-height: 80vh;
+  object-fit: contain;
+  padding-top: 1vh;
+  opacity: 0.5;
+}
+
+
 /* Safari-Specific Fixes */
 @supports (-webkit-touch-callout: none) {
   .parallax {
@@ -287,15 +327,35 @@ PARALLAX SECTION FIXES & IMPROVEMENTS
   }
 }
 
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+  }
 
-/* Hero Image Adjustments */
-.vien_parallax img {
-  max-width: 80%;
-  max-height: 80vh;
-  object-fit: contain;
-  padding-top: 1vh;
-  opacity: 0.5;
+  .vien_parallax {
+    display: block;
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -478,21 +538,47 @@ INTRO SECTION STYLING
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* *************************************
 TEAM SECTION STYLING
 ************************************* */
 .teamSection {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fbfbfb;
+  padding: 60px 20px;
   text-align: center;
-  padding: 60px 8%;
 }
-
 
 /* Team Container */
 .teamContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
   gap: 30px;
+  justify-content: center;
 }
 
 /* Individual Team Member */
@@ -501,7 +587,6 @@ TEAM SECTION STYLING
   padding: 20px;
   border-radius: 12px;
   text-align: center;
-  width: 280px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -526,33 +611,39 @@ TEAM SECTION STYLING
   transform: scale(1.1);
 }
 
-
-@media (max-width: 1024px) {
-  .teamContainer {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-}
-
+/* Enforce 3-column layout on all devices */
 @media (max-width: 768px) {
   .teamContainer {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr) !important; /* Force 3 columns */
   }
 }
 
 @media (max-width: 540px) {
   .teamContainer {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(1, 1fr) !important;
+    overflow-x: auto; /* Prevents overflow issues on very small screens */
+    display: grid;
+    gap: 15px;
   }
 
   .teamMember {
-    width: 60%;
+    min-width: 120px; /* Ensures items don't shrink too much */
   }
 }
 
-  
 
+
+
+
+
+
+
+
+
+
+
+
+  
 /* *************************************
    SPONSORS SECTION STYLING
 ************************************* */
@@ -562,43 +653,45 @@ TEAM SECTION STYLING
   background-color: white;
 }
 
-
 /* Sponsors Container */
 .sponsorsContainer {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 30px;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 /* Sponsor Logo */
 .sponsor img {
-  width: 100%;
-  max-width: 100px;
-  max-height: 200px;
-  height: auto;
-  filter: grayscale(100%); /* Default grayscale */
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  max-height: 120px;
+  width: auto;
 }
 
-/* Hover Effect - Adds Slight Color */
-.sponsor img:hover {
-  filter: grayscale(0%); /* Removes grayscale on hover */
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .sponsorsContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* Responsive adjustments for small screens */
 @media (max-width: 540px) {
+  /* Adjust layout */
   .sponsorsContainer {
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  /* Set max-width for images */
+  .sponsor img {
+    max-width: 400px; /* Adjust as needed */
+    max-height: 80px;
   }
 }
+
+
+
+
+
+
+
+
 
 
 
