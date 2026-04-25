@@ -1890,6 +1890,11 @@
         .team-card {
           min-height: auto;
         }
+
+        .platform-demo {
+          display: none;
+        }
+
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -1960,7 +1965,6 @@
 
     <canvas id="particleCanvas" aria-hidden="true"></canvas>
     <div class="grid-overlay" aria-hidden="true"></div>
-    <div class="noise" aria-hidden="true"></div>
 
     <header class="site-header">
       <div class="header-inner">
@@ -2814,6 +2818,8 @@
               particle.draw();
             });
 
+            if (window.innerWidth < 900) return;
+
             for (let i = 0; i < particles.length; i += 1) {
               for (let j = i + 1; j < particles.length; j += 1) {
                 const p1 = particles[i];
@@ -2899,6 +2905,11 @@
         if (!canvas) return;
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
+
+        if (window.innerWidth < 900) {
+          canvas.style.display = "none";
+          return;
+        }
 
         const config = {
           cellX: 75,
