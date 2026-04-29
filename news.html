@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>News | Immitra Bio</title>
+  <meta name="description" content="Latest news, milestones, and company updates from Immitra Bio." />
+  <meta name="author" content="Immitra Bio" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="News | Immitra Bio" />
+  <meta property="og:description" content="Follow Immitra Bio’s latest milestones, recognitions, and company updates." />
+  <meta property="og:image" content="https://www.immitrabio.com/assets/images/og-image.png" />
+  <meta property="og:url" content="https://www.immitrabio.com/news.html" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="News | Immitra Bio" />
+  <meta name="twitter:description" content="Latest news, milestones, and company updates from Immitra Bio." />
+  <meta name="twitter:image" content="https://www.immitrabio.com/assets/images/og-image.png" />
+
+  <link rel="canonical" href="https://www.immitrabio.com/news.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --text: #f4f7fb;
+      --muted: #98a2b3;
+      --accent-primary: #1a1f8c;
+      --accent-secondary: #e8001d;
+      --max: 1320px;
+      --header-height: 78px;
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(26, 31, 140, 0.16), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(232, 0, 29, 0.13), transparent 25%),
+        linear-gradient(180deg, #040613 0%, #050816 55%, #070b1a 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(circle at center, black 48%, transparent 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header,
+    main,
+    footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(3, 5, 14, 0.76), rgba(3, 5, 14, 0.18));
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .header-inner,
+    section,
+    footer {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .header-inner {
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: "Sora", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 50px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.95rem;
+    }
+
+    .nav a {
+      position: relative;
+    }
+
+    .nav a::after,
+    .nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-secondary), transparent);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .nav a:hover::after,
+    .nav a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav a.active {
+      color: #fff;
+    }
+
+    .cta-mini {
+      padding: 12px 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .news-intro {
+      padding: 150px 0 36px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.72);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-secondary);
+      box-shadow: 0 0 12px rgba(232,0,29,0.45);
+    }
+
+    .intro-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .intro-row h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: "Sora", sans-serif;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .intro-row p {
+      max-width: 460px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .intro-row a {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .news {
+      padding: 24px 0 96px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    /* featured spans full width */
+    .featured {
+      grid-column: 1 / -1;
+    }
+
+    /* 2 columns on larger screens */
+    @media (min-width: 900px) {
+      .news-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .news-card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-card:hover {
+      transform: translateX(4px);
+      border-color: rgba(232,0,29,0.24);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    }
+
+    .featured {
+      min-height: 310px;
+      padding: clamp(28px, 5vw, 52px);
+      background:
+        radial-gradient(circle at 88% 20%, rgba(232,0,29,0.16), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025));
+    }
+
+    .featured-label {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(232,0,29,0.14);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .news-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      color: rgba(255,255,255,0.54);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .source {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .news-card h2 {
+      max-width: 980px;
+      margin: 0 0 12px;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .featured h2 {
+      font-size: clamp(2rem, 5vw, 4rem);
+    }
+
+    .news-card p {
+      max-width: 920px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .read-more::after {
+      content: "→";
+      transform: translateX(0);
+      transition: transform 0.25s ease;
+    }
+
+    .read-more:hover::after {
+      transform: translateX(5px);
+    }
+
+    .site-footer {
+      padding: 48px 0;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 720px) {
+      :root { --header-height: 72px; }
+
+      .nav,
+      .cta-mini {
+        display: none;
+      }
+
+      .brand {
+        font-size: 1.1rem;
+      }
+
+      .news-intro {
+        padding-top: 120px;
+      }
+
+      .news-card,
+      .featured {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html#top" class="brand" aria-label="Immitra Bio home">
+        <img class="brand-mark" src="https://immitrabio.com/assets/images/ImmitraBio_Logo.svg" alt="Immitra Bio logo" />
+        <span>Immitra Bio</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html#story">Approach</a>
+        <a href="index.html#platform">Platform</a>
+        <a href="index.html#team">Team</a>
+        <a href="news.html" class="active" aria-current="page">News</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <a class="cta-mini" href="index.html#contact"> </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="news-intro">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span>Company updates</span>
+      </div>
+
+      <div class="intro-row">
+        <h1>Press and updates</h1>
+        <p>
+          Follow us on our
+          <a href="https://www.linkedin.com/company/immitra-bio/" target="_blank" rel="noopener noreferrer">LinkedIn page</a>
+          for the latest updates from Immitra Bio.
+        </p>
+      </div>
+    </section>
+
+    <section class="news" id="news">
+      <div class="news-grid">
+        <article class="news-card featured">
+          <div class="featured-label">Featured news</div>
+          <div class="news-meta">
+            <span>18 Mar 2026</span>
+            <span>•</span>
+            <span class="source">Venturelab</span>
+          </div>
+          <h2>Immitra Bio among ten Swiss biotech startups selected for Venture Leaders Boston Roadshow 2026</h2>
+          <p>
+            Immitra Bio has been selected for the 2026 Venture Leaders Biotech program, joining the Swiss National Startup Team for a Boston roadshow from May 31 to June 5.
+          </p>
+          <a class="read-more" href="https://www.venturelab.swiss/Venture-Leaders-Biotech-2026-10-innovative-biotech-startups-selected-for-the-Boston-roadshow" target="_blank" rel="noopener noreferrer">Read more</a>
+        </article>
+
+        <article class="news-card">
+          <div class="news-meta">
+            <span>29 Jan 2026</span>
+            <span>•</span>
+            <span class="source">Venture Kick</span>
+          </div>
+          <h2>Immitra Bio awarded Venture Kick Stage II to advance scalable in-vivo gene editing therapies</h2>
+          <p>
+            Immitra Bio received Venture Kick support to advance an in-vivo gene editing platform for blood disorders, aiming to make curative therapies faster, safer, and more scalable.
+          </p>
+          <a class="read-more" href="https://www.venturekick.ch/Immitra-Bio-receives-CHF-40000-from-Venture-Kick-to-advance-scalable-in-vivo-gene-therapy" target="_blank" rel="noopener noreferrer">Read more</a>
+        </article>
+
+        <article class="news-card">
+          <div class="news-meta">
+            <span>08 Dec 2025</span>
+            <span>•</span>
+            <span class="source">Forbes</span>
+          </div>
+          <h2>CEO Jan Nelis recognized among Forbes 30 Under 30 Swiss innovators</h2>
+          <p>
+            Forbes 30 Under 30 highlights influential personalities in Switzerland, Germany, and Austria who are making a positive impact across business and society.
+          </p>
+          <a class="read-more" href="https://forbes.swiss/30-under-30-2025/listmaker" target="_blank" rel="noopener noreferrer">Read more</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2026 Immitra Bio. All rights reserved.</div>
+      <a href="https://www.linkedin.com/company/immitra-bio/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>
