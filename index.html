@@ -1955,6 +1955,25 @@
         );
       }
 
+      .read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .read-more::after {
+        content: "→";
+        transform: translateX(0);
+        transition: transform 0.25s ease;
+      }
+
+      .read-more:hover::after {
+        transform: translateX(5px);
+      }
+
       /* burger button */
       .burger {
         display: none;
@@ -2118,13 +2137,30 @@
             behind.
           </p>
           <div class="hero-actions">
-            <a href="news.html" class="btn btn-primary">News</a>
+            <a href="news.html" class="btn btn-primary">Read More News</a>
           </div>
         </div>
 
         <div class="steps">
+
           <article class="step scroll-fade">
-            <div class="step-number">18 Mar 2026</div>
+            <div class="step-number">30 Apr 2026 - <strong>Gebert Rüf Stiftung</strong></div>
+            <h3>
+              Immitra Bio wins 150'000 CHF Innobooster funding supported by Gebert Rüf Stiftung 
+            </h3>
+            <p>
+              Gebert Rüf Stiftung supports high-potential businesses from the Venture Kick 
+              program with the aim of substantially accelerating their market entry. 
+              The funding line is calling for top talents with convincing applications 
+              of how a research & development or design boost can speed up a successful 
+              market penetration of their deeptech business. <br>
+              <a class="read-more" href="https://www.grstiftung.ch/de/handlungsfelder/innobooster.html"target="_blank" style="color:#f4f7fb" >Read more</a>
+            </p>
+            
+          </article>
+
+          <article class="step scroll-fade">
+            <div class="step-number">18 Mar 2026 - <strong>Venturelab</strong></div>
             <h3>
               Immitra Bio Among Ten Swiss biotech startups selected for Venture
               Leaders Boston Roadshow 2026
@@ -2135,14 +2171,14 @@
               June 5th as part of the Swiss National Startup Team. During their
               roadshow, Immitra Bio will connect with international investors
               and industry leaders, acquiring expertise to help scale their
-              ventures internationally. 
-              <a href="https://www.venturelab.swiss/Venture-Leaders-Biotech-2026-10-innovative-biotech-startups-selected-for-the-Boston-roadshow"target="_blank" style="color:#f4f7fb" >Read more</a>
+              ventures internationally. <br>
+              <a class="read-more" href="https://www.venturelab.swiss/Venture-Leaders-Biotech-2026-10-innovative-biotech-startups-selected-for-the-Boston-roadshow"target="_blank" style="color:#f4f7fb" >Read more</a>
             </p>
             
           </article>
 
           <article class="step scroll-fade">
-            <div class="step-number">29 Jan 2026</div>
+            <div class="step-number">29 Jan 2026 - <strong>Venture Kick</strong></div>
             <h3>
               Immitra Bio awarded Venture Kick Stage-II to Advance Scalable
               In-vivo Gene Edtiting Therapies
@@ -2152,13 +2188,13 @@
               in-vivo gene editing platform for blood disorders. The approach
               enables gene correction directly in the body, without
               chemotherapy, making curative therapies faster, safer, and more
-              scalable.
-              <a href="https://www.venturekick.ch/Immitra-Bio-receives-CHF-40000-from-Venture-Kick-to-advance-scalable-in-vivo-gene-therapy" target="_blank" style="color:#f4f7fb">Read more</a>
+              scalable. <br>
+              <a class="read-more" href="https://www.venturekick.ch/Immitra-Bio-receives-CHF-40000-from-Venture-Kick-to-advance-scalable-in-vivo-gene-therapy" target="_blank" style="color:#f4f7fb">Read more</a>
               </p>
           </article>
 
           <article class="step scroll-fade">
-            <div class="step-number">08 Dec 2025</div>
+            <div class="step-number">08 Dec 2025 - <strong>Forbes</strong></div>
             <h3>
               Our CEO, Jan Nelis, Recognized Among Forbes 30Under30 Swiss
               Innovators
@@ -2168,7 +2204,8 @@
               influential personalities in Switzerland, Germany, and Austria who
               positively impact business and society. Selected from startups
               offering solutions in various sectors and prominent figures
-              supporting the ecosystem. <a href="https://forbes.swiss/30-under-30-2025/listmaker" target="_blank" style="color:#f4f7fb" >Read more</a>
+              supporting the ecosystem. <br>
+              <a class="read-more" href="https://forbes.swiss/30-under-30-2025/listmaker" target="_blank" style="color:#f4f7fb" >Read more</a>
             </p>
           </article>
         </div>
@@ -2451,6 +2488,12 @@
                 </div>
               </a>
 
+              <a href="https://www.grstiftung.ch/de/handlungsfelder/innobooster.html" class="sponsor-logo-card" target="_blank" aria-label="Innobooster - Gebert Rüf Stiftung">
+                <div class="sponsor-logo-inner">
+                  <img src="assets/images/sponsors/Innobooster.png" alt="GRS logo"/>
+                </div>
+              </a>
+
             </div>
           </div>
         </div>
@@ -2466,6 +2509,8 @@
                 We are building scalable in-vivo genomic medicine for blood
                 disorders. Whether you are an investor, partner, scientist, or
                 operator, reach out directly.
+                <br>
+                For open positions, please visit our <a class="read-more" href="careers.html">Career page</a>
               </p>
 
               <div class="contact-cards">
