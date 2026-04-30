@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>News | Immitra Bio</title>
-  <meta name="description" content="Latest news, milestones, and company updates from Immitra Bio." />
+  <title>Careers | Immitra Bio</title>
+  <meta name="description" content="Explore open roles at Immitra Bio and help build scalable in-vivo genomic medicine." />
   <meta name="author" content="Immitra Bio" />
   <meta name="robots" content="index, follow" />
 
-  <meta property="og:title" content="News | Immitra Bio" />
-  <meta property="og:description" content="Follow Immitra Bio’s latest milestones, recognitions, and company updates." />
+  <meta property="og:title" content="Careers | Immitra Bio" />
+  <meta property="og:description" content="Join Immitra Bio and help build scalable in-vivo genomic medicine." />
   <meta property="og:image" content="https://www.immitrabio.com/assets/images/og-image.png" />
-  <meta property="og:url" content="https://www.immitrabio.com/news.html" />
+  <meta property="og:url" content="https://www.immitrabio.com/careers.html" />
   <meta property="og:type" content="website" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="News | Immitra Bio" />
-  <meta name="twitter:description" content="Latest news, milestones, and company updates from Immitra Bio." />
+  <meta name="twitter:title" content="Careers | Immitra Bio" />
+  <meta name="twitter:description" content="Explore open roles at Immitra Bio." />
   <meta name="twitter:image" content="https://www.immitrabio.com/assets/images/og-image.png" />
 
-  <link rel="canonical" href="https://www.immitrabio.com/news.html" />
+  <link rel="canonical" href="https://www.immitrabio.com/careers.html" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +29,6 @@
 
   <style>
     :root {
-      --bg: #050816;
       --text: #f4f7fb;
       --muted: #98a2b3;
       --accent-primary: #1a1f8c;
@@ -160,8 +159,8 @@
       background: rgba(255,255,255,0.03);
     }
 
-    .news-intro {
-      padding: 150px 0 36px;
+    .careers-intro {
+      padding: 150px 0 42px;
     }
 
     .eyebrow {
@@ -206,81 +205,57 @@
     }
 
     .intro-row p {
-      max-width: 460px;
+      max-width: 520px;
       margin: 0;
       color: var(--muted);
       line-height: 1.7;
     }
 
-    .intro-row a {
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .news {
+    .roles {
       padding: 24px 0 96px;
     }
 
-    .news-grid {
+    .roles-head {
+      margin-bottom: 22px;
+    }
+
+    .roles-head h2 {
+      margin: 0;
+      font-family: "Sora", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .roles-grid {
       display: grid;
-      grid-template-columns: 1fr;
       gap: 18px;
     }
 
-    /* featured spans full width */
-    .featured {
-      grid-column: 1 / -1;
-    }
-
-    /* 2 columns on larger screens */
-    @media (min-width: 900px) {
-      .news-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .news-card {
-      position: relative;
-      overflow: hidden;
+    .role-card,
+    .empty-card {
       padding: 28px;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: var(--radius);
       background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+    }
+
+    .role-card {
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .news-card:hover {
+    .role-card:hover {
       transform: translateX(4px);
       border-color: rgba(232,0,29,0.24);
       box-shadow: 0 20px 60px rgba(0,0,0,0.22);
     }
 
-    .featured {
-      min-height: 310px;
-      padding: clamp(28px, 5vw, 52px);
-      background:
-        radial-gradient(circle at 88% 20%, rgba(232,0,29,0.16), transparent 28%),
-        linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025));
-    }
-
-    .featured-label {
-      display: inline-flex;
-      margin-bottom: 18px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(232,0,29,0.14);
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .news-meta {
+    .role-meta {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       color: rgba(255,255,255,0.54);
       font-size: 0.82rem;
       font-weight: 700;
@@ -288,30 +263,23 @@
       text-transform: uppercase;
     }
 
-    .source {
-      color: rgba(255,255,255,0.78);
-    }
-
-    .news-card h2 {
-      max-width: 980px;
+    .role-card h3,
+    .empty-card h3 {
       margin: 0 0 12px;
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
       line-height: 1.1;
       letter-spacing: -0.04em;
     }
 
-    .featured h2 {
-      font-size: clamp(2rem, 5vw, 4rem);
-    }
-
-    .news-card p {
-      max-width: 920px;
+    .role-card p,
+    .empty-card p {
+      max-width: 860px;
       margin: 0;
       color: var(--muted);
       line-height: 1.75;
     }
 
-    .read-more {
+    .apply-link {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -320,14 +288,18 @@
       font-weight: 700;
     }
 
-    .read-more::after {
+    .apply-link::after {
       content: "→";
-      transform: translateX(0);
       transition: transform 0.25s ease;
     }
 
-    .read-more:hover::after {
+    .apply-link:hover::after {
       transform: translateX(5px);
+    }
+
+    .empty-card {
+      border-style: dashed;
+      text-align: left;
     }
 
     .site-footer {
@@ -343,6 +315,12 @@
       flex-wrap: wrap;
     }
 
+    @media (min-width: 900px) {
+      .roles-grid.has-roles {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     @media (max-width: 720px) {
       :root { --header-height: 72px; }
 
@@ -355,82 +333,82 @@
         font-size: 1.1rem;
       }
 
-      .news-intro {
+      .careers-intro {
         padding-top: 120px;
       }
 
-      .news-card,
-      .featured {
+      .role-card,
+      .empty-card {
         padding: 22px;
       }
     }
     /* burger button */
     .burger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 6px;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.04);
-      cursor: pointer;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+    cursor: pointer;
     }
 
     .burger span {
-      display: block;
-      width: 18px;
-      height: 2px;
-      margin: 0 auto;
-      background: #fff;
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin: 0 auto;
+    background: #fff;
     }
 
     /* mobile menu */
     .mobile-menu {
-      position: fixed;
-      inset: 0;
-      background: rgba(4,6,19,0.96);
-      backdrop-filter: blur(18px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: translateY(-100%);
-      transition: transform 0.4s ease;
-      z-index: 30;
+    position: fixed;
+    inset: 0;
+    background: rgba(4,6,19,0.96);
+    backdrop-filter: blur(18px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    z-index: 30;
     }
 
     .mobile-menu.active {
-      transform: translateY(0);
+    transform: translateY(0);
     }
 
     .mobile-menu nav {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      text-align: center;
-      font-size: 1.4rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     }
 
     .mobile-menu a {
-      color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.85);
     }
 
     .mobile-menu a:hover {
-      color: #fff;
+    color: #fff;
     }
 
     /* responsive */
     @media (max-width: 720px) {
-      .nav {
+    .nav {
         display: none;
-      }
+    }
 
-      .burger {
+    .burger {
         display: flex;
-      }
+    }
     }
   </style>
 </head>
@@ -447,8 +425,8 @@
         <a href="index.html#story">Approach</a>
         <a href="index.html#platform">Platform</a>
         <a href="index.html#team">Team</a>
-        <a href="news.html" class="active" aria-current="page">News</a>
-        <a href="career.html">Career</a>
+        <a href="news.html">News</a>
+        <a href="careers.html" class="active" aria-current="page">Careers</a>
         <a href="index.html#contact">Contact</a>
       </nav>
 
@@ -470,63 +448,69 @@
     </div>
 
   <main>
-    <section class="news-intro">
+    <section class="careers-intro">
       <div class="eyebrow">
         <span class="eyebrow-dot"></span>
-        <span>Company updates</span>
+        <span>Join the team</span>
       </div>
 
       <div class="intro-row">
-        <h1>Press and updates</h1>
+        <h1>Open roles</h1>
         <p>
-          Follow us on our
-          <a href="https://www.linkedin.com/company/immitra-bio/" target="_blank" rel="noopener noreferrer">LinkedIn page</a>
-          for the latest updates from Immitra Bio.
+          We are building scalable in-vivo genomic medicine for blood disorders.
+          Join us at the frontier of biology and engineering.
         </p>
       </div>
     </section>
 
-    <section class="news" id="news">
-      <div class="news-grid">
-        <article class="news-card featured">
-          <div class="featured-label">Featured news</div>
-          <div class="news-meta">
-            <span>18 Mar 2026</span>
-            <span>•</span>
-            <span class="source">Venturelab</span>
-          </div>
-          <h2>Immitra Bio among ten Swiss biotech startups selected for Venture Leaders Boston Roadshow 2026</h2>
+    <section class="roles" id="open-roles">
+
+      <div class="roles-grid">
+        <!-- 
+        <article class="empty-card">
+          <h3>No open roles right now</h3>
           <p>
-            Immitra Bio has been selected for the 2026 Venture Leaders Biotech program, joining the Swiss National Startup Team for a Boston roadshow from May 31 to June 5.
+            We are not actively hiring at the moment. Follow us on
+            <a href="https://www.linkedin.com/company/immitra-bio/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            for future opportunities, or reach out at
+            <a href="mailto:info@immitrabio.com">info@immitrabio.com</a>.
           </p>
-          <a class="read-more" href="https://www.venturelab.swiss/Venture-Leaders-Biotech-2026-10-innovative-biotech-startups-selected-for-the-Boston-roadshow" target="_blank" rel="noopener noreferrer">Read more</a>
         </article>
 
-        <article class="news-card">
-          <div class="news-meta">
-            <span>29 Jan 2026</span>
+        -->
+
+        <article class="role-card">
+          <div class="role-meta">
+            <span>Zurich (Schlieren)</span>
             <span>•</span>
-            <span class="source">Venture Kick</span>
+            <span>Full-time</span>
           </div>
-          <h2>Immitra Bio awarded Venture Kick Stage II to advance scalable in-vivo gene editing therapies</h2>
+          <h3>R&D Scientist, Gene Editing </h3>
           <p>
-            Immitra Bio received Venture Kick support to advance an in-vivo gene editing platform for blood disorders, aiming to make curative therapies faster, safer, and more scalable.
+            (Upcoming, stay tuned) <br>
+            Help advance our in-vivo gene editing platform across experimental design,
+            assay development, and preclinical validation. Job description and apply link will be available here soon.
           </p>
-          <a class="read-more" href="https://www.venturekick.ch/Immitra-Bio-receives-CHF-40000-from-Venture-Kick-to-advance-scalable-in-vivo-gene-therapy" target="_blank" rel="noopener noreferrer">Read more</a>
+          <!-- <a class="apply-link" href="mailto:jobs@immitrabio.com?subject=Application%20-%20R%26D%20Scientist%2C%20Gene%20Editing">Apply</a> -->
         </article>
 
-        <article class="news-card">
-          <div class="news-meta">
-            <span>08 Dec 2025</span>
+        <!-- Duplicate this block when you want to add a role:
+
+        <article class="role-card">
+          <div class="role-meta">
+            <span>Geneva / Zurich</span>
             <span>•</span>
-            <span class="source">Forbes</span>
+            <span>Full-time</span>
           </div>
-          <h2>CEO Jan Nelis recognized among Forbes 30 Under 30 Swiss innovators</h2>
+          <h3>R&D Scientist, Gene Editing</h3>
           <p>
-            Forbes 30 Under 30 highlights influential personalities in Switzerland, Germany, and Austria who are making a positive impact across business and society.
+            Help advance our in-vivo gene editing platform across experimental design,
+            assay development, and preclinical validation.
           </p>
-          <a class="read-more" href="https://forbes.swiss/30-under-30-2025/listmaker" target="_blank" rel="noopener noreferrer">Read more</a>
+          <a class="apply-link" href="mailto:info@immitrabio.com?subject=Application%20-%20R%26D%20Scientist%2C%20Gene%20Editing">Apply</a>
         </article>
+
+        -->
       </div>
     </section>
   </main>
@@ -542,15 +526,14 @@
     const menu = document.getElementById("mobileMenu");
 
     burger.addEventListener("click", () => {
-      menu.classList.toggle("active");
+    menu.classList.toggle("active");
     });
 
     menu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
+    link.addEventListener("click", () => {
         menu.classList.remove("active");
-      });
     });
-    
+    });
   </script>
 </body>
 </html>
